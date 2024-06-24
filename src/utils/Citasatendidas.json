@@ -1,0 +1,197 @@
+[
+    {
+      "id": 2,
+      "fecha": "2024-06-25T00:00:00.000Z",
+      "estado": "aceptado",
+      "createdAt": "2024-06-23T08:17:38.967Z",
+      "updatedAt": "2024-06-23T08:17:38.967Z",
+      "clientId": 2,
+      "client": {
+        "id": 2,
+        "name": "Camila Perez",
+        "email": "Camila.perez@example.com",
+        "telefono": 123456789
+      },
+      "servicios": [
+        {
+          "id": 3,
+          "nombre": "Peinado",
+          "price": 30,
+          "CitaServicio": {
+            "createdAt": "2024-06-23T08:17:39.018Z",
+            "updatedAt": "2024-06-23T08:17:39.018Z",
+            "citumId": 2,
+            "servicioId": 3
+          }
+        },
+        {
+          "id": 4,
+          "nombre": "Tratamiento Capilar",
+          "price": 50,
+          "CitaServicio": {
+            "createdAt": "2024-06-23T08:17:39.018Z",
+            "updatedAt": "2024-06-23T08:17:39.018Z",
+            "citumId": 2,
+            "servicioId": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "fecha": "2024-06-25T00:00:00.000Z",
+      "estado": "aceptado",
+      "createdAt": "2024-06-23T08:17:27.123Z",
+      "updatedAt": "2024-06-23T09:04:12.852Z",
+      "clientId": 1,
+      "client": {
+        "id": 1,
+        "name": "Agustin Perez",
+        "email": "Agustin.perez@example.com",
+        "telefono": 123456789
+      },
+      "servicios": [
+        {
+          "id": 1,
+          "nombre": "Corte de Cabello",
+          "price": 20,
+          "CitaServicio": {
+            "createdAt": "2024-06-23T08:17:27.169Z",
+            "updatedAt": "2024-06-23T08:17:27.169Z",
+            "citumId": 1,
+            "servicioId": 1
+          }
+        },
+        {
+          "id": 2,
+          "nombre": "Coloración",
+          "price": 60,
+          "CitaServicio": {
+            "createdAt": "2024-06-23T08:17:27.169Z",
+            "updatedAt": "2024-06-23T08:17:27.169Z",
+            "citumId": 1,
+            "servicioId": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fecha": "2024-06-25T00:00:00.000Z",
+      "estado": "aceptado",
+      "createdAt": "2024-06-23T08:17:51.389Z",
+      "updatedAt": "2024-06-23T09:04:38.451Z",
+      "clientId": 1,
+      "client": {
+        "id": 1,
+        "name": "Agustin Perez",
+        "email": "Agustin.perez@example.com",
+        "telefono": 123456789
+      },
+      "servicios": [
+        {
+          "id": 6,
+          "nombre": "Corte de Barba",
+          "price": 15,
+          "CitaServicio": {
+            "createdAt": "2024-06-23T08:17:51.535Z",
+            "updatedAt": "2024-06-23T08:17:51.535Z",
+            "citumId": 3,
+            "servicioId": 6
+          }
+        },
+        {
+          "id": 3,
+          "nombre": "Peinado",
+          "price": 30,
+          "CitaServicio": {
+            "createdAt": "2024-06-23T09:04:38.460Z",
+            "updatedAt": "2024-06-23T09:04:38.460Z",
+            "citumId": 3,
+            "servicioId": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "fecha": "2023-12-15T00:00:00.000Z",
+      "estado": "aceptado",
+      "createdAt": "2024-06-23T09:16:14.347Z",
+      "updatedAt": "2024-06-23T09:18:00.790Z",
+      "clientId": 4,
+      "client": {
+        "id": 4,
+        "name": "Eugenia Perez",
+        "email": "Eugenia.perez@example.com",
+        "telefono": 123456789
+      },
+      "servicios": [
+        {
+          "id": 3,
+          "nombre": "Peinado",
+          "price": 30,
+          "CitaServicio": {
+            "createdAt": "2024-06-23T09:18:00.799Z",
+            "updatedAt": "2024-06-23T09:18:00.799Z",
+            "citumId": 9,
+            "servicioId": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "fecha": "2023-06-25T00:00:00.000Z",
+      "estado": "aceptado",
+      "createdAt": "2024-06-23T09:09:50.793Z",
+      "updatedAt": "2024-06-23T09:09:50.793Z",
+      "clientId": 3,
+      "client": {
+        "id": 3,
+        "name": "Julieta Perez",
+        "email": "Julieta.perez@example.com",
+        "telefono": 123456789
+      },
+      "servicios": [
+        {
+          "id": 5,
+          "nombre": "Alisado",
+          "price": 100,
+          "CitaServicio": {
+            "createdAt": "2024-06-23T09:09:50.798Z",
+            "updatedAt": "2024-06-23T09:09:50.798Z",
+            "citumId": 8,
+            "servicioId": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "fecha": "2022-06-25T00:00:00.000Z",
+      "estado": "aceptado",
+      "createdAt": "2024-06-23T09:09:43.165Z",
+      "updatedAt": "2024-06-23T09:09:43.165Z",
+      "clientId": 3,
+      "client": {
+        "id": 3,
+        "name": "Julieta Perez",
+        "email": "Julieta.perez@example.com",
+        "telefono": 123456789
+      },
+      "servicios": [
+        {
+          "id": 4,
+          "nombre": "Tratamiento Capilar",
+          "price": 50,
+          "CitaServicio": {
+            "createdAt": "2024-06-23T09:09:43.220Z",
+            "updatedAt": "2024-06-23T09:09:43.220Z",
+            "citumId": 7,
+            "servicioId": 4
+          }
+        }
+      ]
+    }
+  ]
