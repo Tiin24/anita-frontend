@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import ModalNuevoCliente from "../Modal/ModalClient";
 import ModalNuevaCita from "../Modal/ModalNuevaCita";
 import { useAuth0 } from "@auth0/auth0-react";
+import { AiOutlineUserAdd,AiOutlineUser  } from "react-icons/ai";
+import { LuMailPlus, LuMail } from "react-icons/lu";
+import { MdOutlineMarkEmailUnread } from "react-icons/md";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,34 +41,64 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-4">
-            <Link to="/citas" className="text-gray-800 hover:text-gray-600">
-              Citas
-            </Link>
-            <Link to="/clients" className="text-gray-800 hover:text-gray-600">
-              Clients
-            </Link>
-            <Link
-              to="/citasAtendidas"
-              className="text-gray-800 hover:text-gray-600"
-            >
-              Citas Atendidas
-            </Link>
-            <button
-              onClick={handleModalClienteOpen}
-              className="text-gray-800 hover:text-gray-600"
-            >
-              Nuevo Cliente
-            </button>
-            <button
-              onClick={handleModalCitaOpen}
-              className="text-gray-800 hover:text-gray-600"
-            >
-              Nueva Cita
-            </button>
             <div>
-              <Link onClick={() => logout()} to={"/"}>
-                <p>logout</p>
-              </Link>
+              <button>
+                <Link
+                  to="/citas"
+                  className="flex items-center text-gray-800 hover:text-gray-600"
+                >
+                  Citas
+                  <LuMail />
+                </Link>
+              </button>
+            </div>
+            <div>
+              <button>
+                <Link
+                  to="/clients"
+                  className="flex items-center text-gray-800 hover:text-gray-600"
+                >
+                  Clients
+                  <AiOutlineUser />
+
+                </Link>
+              </button>
+            </div>
+            <div>
+              <button>
+                <Link
+                  to="/citasAtendidas"
+                  className="flex items-center text-gray-800 hover:text-gray-600"
+                >
+                  Citas Atendidas
+                  <MdOutlineMarkEmailUnread />
+                </Link>
+              </button>
+            </div>
+            <div>
+              <button
+                onClick={handleModalClienteOpen}
+                className="flex items-center text-gray-800 hover:text-gray-600"
+              >
+                New
+                <AiOutlineUserAdd />
+              </button>
+            </div>
+            <div>
+              <button
+                onClick={handleModalCitaOpen}
+                className="flex items-center text-gray-800 hover:text-gray-600"
+              >
+                New
+                <LuMailPlus />
+              </button>
+            </div>
+            <div>
+              <button className="inline-flex items-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                <Link onClick={() => logout()} to={"/"}>
+                  <p>logout</p>
+                </Link>
+              </button>
             </div>
           </div>
           <div className="md:hidden flex items-center">

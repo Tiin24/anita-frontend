@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "nombre": "Corte de Cabello",
+      "price": 20,
+      "createdAt": "2024-06-23T08:15:33.112Z",
+      "updatedAt": "2024-06-23T08:15:33.112Z"
+    },
+    {
+      "id": 2,
+      "nombre": "Coloración",
+      "price": 60,
+      "createdAt": "2024-06-23T08:15:33.112Z",
+      "updatedAt": "2024-06-23T08:15:33.112Z"
+    },
+    {
+      "id": 3,
+      "nombre": "Peinado",
+      "price": 30,
+      "createdAt": "2024-06-23T08:15:33.112Z",
+      "updatedAt": "2024-06-23T08:15:33.112Z"
+    },
+    {
+      "id": 4,
+      "nombre": "Tratamiento Capilar",
+      "price": 50,
+      "createdAt": "2024-06-23T08:15:33.112Z",
+      "updatedAt": "2024-06-23T08:15:33.112Z"
+    },
+    {
+      "id": 5,
+      "nombre": "Alisado",
+      "price": 100,
+      "createdAt": "2024-06-23T08:15:33.112Z",
+      "updatedAt": "2024-06-23T08:15:33.112Z"
+    },
+    {
+      "id": 6,
+      "nombre": "Corte de Barba",
+      "price": 15,
+      "createdAt": "2024-06-23T08:15:33.112Z",
+      "updatedAt": "2024-06-23T08:15:33.112Z"
+    },
+    {
+      "id": 7,
+      "nombre": "Extensiones",
+      "price": 200,
+      "createdAt": "2024-06-23T08:15:33.112Z",
+      "updatedAt": "2024-06-23T08:15:33.112Z"
+    },
+    {
+      "id": 8,
+      "nombre": "Ondulado Permanente",
+      "price": 80,
+      "createdAt": "2024-06-23T08:15:33.112Z",
+      "updatedAt": "2024-06-23T08:15:33.112Z"
+    }
+  ]

@@ -1,34 +1,34 @@
 [
-    {
-      "id": 1,
-      "name": "Agustin Perez",
-      "email": "Agustin.perez@example.com",
-      "telefono": 123456789,
-      "createdAt": "2024-06-23T08:16:11.733Z",
-      "updatedAt": "2024-06-23T08:16:11.733Z"
-    },
-    {
-      "id": 2,
-      "name": "Camila Perez",
-      "email": "Camila.perez@example.com",
-      "telefono": 123456789,
-      "createdAt": "2024-06-23T08:16:18.056Z",
-      "updatedAt": "2024-06-23T08:16:18.056Z"
-    },
-    {
-      "id": 3,
-      "name": "Julieta Perez",
-      "email": "Julieta.perez@example.com",
-      "telefono": 123456789,
-      "createdAt": "2024-06-23T08:16:27.450Z",
-      "updatedAt": "2024-06-23T08:16:27.450Z"
-    },
-    {
-      "id": 4,
-      "name": "Eugenia Perez",
-      "email": "Eugenia.perez@example.com",
-      "telefono": 123456789,
-      "createdAt": "2024-06-23T09:15:23.651Z",
-      "updatedAt": "2024-06-23T09:15:23.651Z"
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Agustin Perez",
+    "email": "Agustin.perez@example.com",
+    "telefono": 123456789,
+    "createdAt": "2024-06-23T08:16:11.733Z",
+    "updatedAt": "2024-06-23T08:16:11.733Z"
+  },
+  {
+    "id": 2,
+    "name": "Camila Perez",
+    "email": "Camila.perez@example.com",
+    "telefono": 123456789,
+    "createdAt": "2024-06-23T08:16:18.056Z",
+    "updatedAt": "2024-06-23T08:16:18.056Z"
+  },
+  {
+    "id": 3,
+    "name": "Julieta Perez",
+    "email": "Julieta.perez@example.com",
+    "telefono": 123456789,
+    "createdAt": "2024-06-23T08:16:27.450Z",
+    "updatedAt": "2024-06-23T08:16:27.450Z"
+  },
+  {
+    "id": 4,
+    "name": "Eugenia Perez",
+    "email": "Eugenia.perez@example.com",
+    "telefono": 123456789,
+    "createdAt": "2024-06-23T09:15:23.651Z",
+    "updatedAt": "2024-06-23T09:15:23.651Z"
+  }
+]

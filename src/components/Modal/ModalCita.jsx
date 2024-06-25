@@ -1,10 +1,26 @@
 /* eslint-disable react/prop-types */
-// import React from 'react';
+import { useState } from "react";
+import useCitasStore from "../../store/useCitas";
+import useServicios from "../../store/useServicios";
 
-const ModalCita = ({ isOpen, onClose, onSubmit, cita }) => {
+const ModalCita = ({ isOpen, onClose, cita }) => {
+  const { servicios } = useServicios();
+  const { updateCita } = useCitasStore();
+  const [selectedServices, setSelectedServices] = useState([]);
+
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleCheckboxChange = (serviceId) => {
+    setSelectedServices((prevSelectedServices) => {
+      if (prevSelectedServices.includes(serviceId)) {
+        return prevSelectedServices.filter(id => id !== serviceId);
+      } else {
+        return [...prevSelectedServices, serviceId];
+      }
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const updatedCita = {
@@ -12,9 +28,17 @@ const ModalCita = ({ isOpen, onClose, onSubmit, cita }) => {
       fecha: formData.get('fecha'),
       estado: formData.get('estado'),
       clientId: formData.get('clientId'),
+      citaServicio: selectedServices, // Suponiendo que la cita puede tener un array de servicios seleccionados
     };
-    onSubmit(updatedCita);
+    try {
+      await updateCita(cita.id, updatedCita);
+      onClose();
+    } catch (error) {
+      console.error('Error updating cita:', error);
+    }
   };
+
+  console.log(cita)
 
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
@@ -45,6 +69,22 @@ const ModalCita = ({ isOpen, onClose, onSubmit, cita }) => {
               <option value="pendiente">Pendiente</option>
               <option value="cancelado">Cancelado</option>
             </select>
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Cita Servicio</label>
+            {servicios.map((servicio) => (
+              <div key={servicio.id}>
+                <label>
+                  <input
+                    type="checkbox"
+                    value={servicio.id}
+                    onChange={() => handleCheckboxChange(servicio.id)}
+                    checked={selectedServices.includes(servicio.id)}
+                  />
+                  {servicio.nombre} - ${servicio.price}
+                </label>
+              </div>
+            ))}
           </div>
           <div className="mb-4">
             <label htmlFor="clientId" className="block text-sm font-medium text-gray-700">ID del Cliente</label>

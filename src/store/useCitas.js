@@ -11,9 +11,6 @@ const useCitasStore = create((set) => ({
       console.error('Error fetching citas:', error);
     }
   },
-  updateCita: (updatedCita) => set((state) => ({
-    citas: state.citas.map(cita => cita.id === updatedCita.id ? updatedCita : cita)
-  })),
   addCita: async (newCita) => {
     try {
       const response = await fetch('http://localhost:4000/citas', {
@@ -38,13 +35,35 @@ const useCitasStore = create((set) => ({
     try {
       const response = await fetch(`http://localhost:4000/citas/cliente/${clientId}`);
       if (!response.ok) {
-        throw new Error('Failed to fetch citas by client ID');
+        throw Error('No se Encontraron citas para este cliente');
       }
       const data = await response.json();
       set({ citas: data });
     } catch (error) {
       console.error('Error fetching citas by client ID:', error);
       throw error;
+    }
+  },
+  updateCita: async (id, updatedCita) => {
+    try {
+      const response = await fetch(`http://localhost:4000/citas/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedCita),
+      });
+      if (!response.ok) {
+        throw new Error('Failed to update cita');
+      }
+      const updatedCitaFromServer = await response.json();
+      set((state) => ({
+        citas: state.citas.map((cita) =>
+          cita.id === id ? updatedCitaFromServer : cita
+        ),
+      }));
+    } catch (error) {
+      console.error('Error updating cita:', error);
     }
   },
 }));

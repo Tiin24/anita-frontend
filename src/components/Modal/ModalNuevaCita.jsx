@@ -1,25 +1,44 @@
 /* eslint-disable react/prop-types */
-// src/components/ModalNuevaCita.jsx
 import { useState } from 'react';
-import useCitas from '../../store/useCitas';
+import useClients from "../../store/useClient";
+import useServicios from "../../store/useServicios";
+import useCitas from "../../store/useCitas"
 
 const ModalNuevaCita = ({ isOpen, onClose }) => {
-  const { addCita } = useCitas();
-  const [fecha, setFecha] = useState('');
-  const [citaServicio, setCitaServicio] = useState('');
-  const [clientId, setClientId] = useState('');
+  const { addCita } = useCitas()
+  const { clients } = useClients();
+  const { servicios } = useServicios();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const [selectedServices, setSelectedServices] = useState([]);
+  const [selectedClient, setSelectedClient] = useState("");
+  const [fecha, setFecha] = useState("");
+
+  const handleCheckboxChange = (serviceId) => {
+    setSelectedServices((prevSelectedServices) => {
+      if (prevSelectedServices.includes(serviceId)) {
+        return prevSelectedServices.filter(id => id !== serviceId);
+      } else {
+        return [...prevSelectedServices, serviceId];
+      }
+    });
+  };
+
+  const handleSelectChange = (event) => {
+    setSelectedClient(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     const newCita = {
       fecha,
-      estado:"pendiente",
-      citaServicio,
-      clientId
+      estado: "pendiente",
+      clientId: selectedClient,
+      citaServicio: selectedServices,
     };
     await addCita(newCita);
     onClose();
   };
+  
 
   if (!isOpen) return null;
 
@@ -40,23 +59,34 @@ const ModalNuevaCita = ({ isOpen, onClose }) => {
           </div>
           <div className="mb-4">
             <label className="block text-gray-700">Cita Servicio</label>
-            <input
-              type="number"
-              value={citaServicio}
-              onChange={(e) => setCitaServicio(e.target.value)}
-              className="mt-1 p-2 w-full border rounded"
-              required
-            />
+            {servicios.map((servicio) => (
+              <div key={servicio.id}>
+                <label>
+                  <input
+                    type="checkbox"
+                    value={servicio.id}
+                    onChange={() => handleCheckboxChange(servicio.id)}
+                    checked={selectedServices.includes(servicio.id)}
+                  />
+                  {servicio.nombre} - ${servicio.price}
+                </label>
+              </div>
+            ))}
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Client ID</label>
-            <input
-              type="number"
-              value={clientId}
-              onChange={(e) => setClientId(e.target.value)}
-              className="mt-1 p-2 w-full border rounded"
-              required
-            />
+            <label className="block text-gray-700">Seleccionar Cliente</label>
+            <select 
+              value={selectedClient} 
+              onChange={handleSelectChange} 
+              className="mt-2 w-full border rounded p-2"
+            >
+              <option value="">Seleccione un cliente</option>
+              {clients.map((cliente) => (
+                <option key={cliente.id} value={cliente.id}>
+                  {cliente.name}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="flex justify-end">
             <button
