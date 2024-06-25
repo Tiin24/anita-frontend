@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useClients from "../../store/useClient";
 import useServicios from "../../store/useServicios";
 import useCitas from "../../store/useCitas"
@@ -7,11 +7,17 @@ import useCitas from "../../store/useCitas"
 const ModalNuevaCita = ({ isOpen, onClose }) => {
   const { addCita } = useCitas()
   const { clients } = useClients();
-  const { servicios } = useServicios();
+  const { servicios,fetchServicios } = useServicios();
 
   const [selectedServices, setSelectedServices] = useState([]);
   const [selectedClient, setSelectedClient] = useState("");
   const [fecha, setFecha] = useState("");
+
+  useEffect(() => {
+    fetchServicios();
+  }, [fetchServicios]);
+
+  if (!isOpen) return null;
 
   const handleCheckboxChange = (serviceId) => {
     setSelectedServices((prevSelectedServices) => {
@@ -35,12 +41,17 @@ const ModalNuevaCita = ({ isOpen, onClose }) => {
       clientId: selectedClient,
       citaServicio: selectedServices,
     };
-    await addCita(newCita);
+    try {
+      await addCita(newCita);
     onClose();
+    } catch (error) {
+      console.error('Error updating cita:', error);
+    }
+    
   };
   
 
-  if (!isOpen) return null;
+  
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">

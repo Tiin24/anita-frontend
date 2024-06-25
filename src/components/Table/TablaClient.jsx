@@ -11,8 +11,8 @@ const TablaClients = () => {
   }, [fetchClients]);
 
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full bg-white shadow-md rounded-lg">
+    <div className="flex justify-center">
+      <table className="w-1/2 border-collapse border border-gray-300">
         <thead>
           <tr>
             <th className="py-2 px-4 bg-gray-200 text-gray-600 font-bold uppercase text-center">
@@ -32,12 +32,12 @@ const TablaClients = () => {
         <tbody>
           {clients.map((client) => (
             <tr key={client.id}>
-              <td className="py-2 px-4 border-b text-center">{client.id}</td>
-              <td className="py-2 px-4 border-b text-center">
+              <td className="border border-gray-300 px-4 py-2 text-center">{client.id}</td>
+              <td className="border border-gray-300 px-4 py-2 text-center">
                 <Link to={`/clients/${client.id}`}>{client.name}</Link>
               </td>
-              <td className="py-2 px-4 border-b text-center">{client.email}</td>
-              <td className="py-2 px-4 border-b text-center">
+              <td className="border border-gray-300 px-4 py-2 text-center">{client.email}</td>
+              <td className="border border-gray-300 px-4 py-2 text-center">
                 {client.telefono}
               </td>
             </tr>

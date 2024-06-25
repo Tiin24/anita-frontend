@@ -10,8 +10,8 @@ const TablaCitasAtendidas = () => {
   }, [fetchCitasAtendidas]);
 
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full bg-white shadow-md rounded-lg mx-auto" style={{ width: '50%' }}>
+    <div className="flex justify-center">
+      <table className="w-1/2 border-collapse border border-gray-300">
         <thead>
           <tr>
             <th className="py-2 px-4 bg-gray-200 text-gray-600 font-bold uppercase text-center">ID</th>
@@ -24,11 +24,11 @@ const TablaCitasAtendidas = () => {
         <tbody>
           {citasAtendidas.map((cita) => (
             <tr key={cita.id}>
-              <td className="py-2 px-4 border-b text-center">{cita.id}</td>
-              <td className="py-2 px-4 border-b text-center">{new Date(cita.fecha).toLocaleDateString()}</td>
-              <td className="py-2 px-4 border-b text-center">{cita.estado}</td>
-              <td className="py-2 px-4 border-b text-center">{cita.client.name}</td>
-              <td className="py-2 px-4 border-b text-center">
+              <td className="border border-gray-300 px-4 py-2 text-center">{cita.id}</td>
+              <td className="border border-gray-300 px-4 py-2 text-center">{new Date(cita.fecha).toLocaleDateString()}</td>
+              <td className="border border-gray-300 px-4 py-2 text-center">{cita.estado}</td>
+              <td className="border border-gray-300 px-4 py-2 text-center">{cita.client.name}</td>
+              <td className="border border-gray-300 px-4 py-2 text-center">
                 {cita.servicios.map((servicio) => servicio.nombre).join(', ')}
               </td>
             </tr>
