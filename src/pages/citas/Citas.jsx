@@ -1,7 +1,6 @@
 import TablaCitas from "../../components/Table/TablaCitas";
 
 const Citas = () => {
-  const { isAuthenticated } = useAuth0();
 
   return (
    
