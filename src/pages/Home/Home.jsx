@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   // const { loginWithRedirect, isAuthenticated } = useAuth0();
-  const navigate = useNavigate();
+  
 
   // const handleLogin = () => {
   //   loginWithRedirect();
